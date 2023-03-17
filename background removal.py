@@ -14,7 +14,7 @@ camera.set(4 , 480)
 mountain = cv2.imread('2.jpeg')
 
 # redimensionando a imagem da montanha como 640 ,480
-mountain = cv2.resize(mountain, ())
+mountain = cv2.resize(mountain, (640, 480))
 
 while True:
 
@@ -31,8 +31,8 @@ while True:
         frame_rgb = cv2.cvtColor(frame , cv2.COLOR_BGR2RGB)
 
         # Preencha os limites que esta no passo 2 do projeto
-        lower_bound = np.array([])
-        upper_bound = np.array([])
+        lower_bound = np.array([100,100,100])
+        upper_bound = np.array([255,255,255])
 
         # imagem dentro do limite
         mask_2 = cv2.inRange(frame_rgb, lower_bound, upper_bound)
